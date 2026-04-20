@@ -14,6 +14,44 @@ hmcts-task-manager/
 
 Two separate apps that talk over HTTP. I kept them in one repo because it's easier to review, but they're completely independent — you could pull either one out and use it on its own.
 
+## Screenshots
+
+### Task list
+
+The main landing page. Shows all tasks sorted by due date, with status tags, overdue indicators, and inline status controls.
+
+![Task list page](docs/screenshots/task-list.png)
+
+### Filtering by status
+
+Tasks can be filtered by status from the dropdown at the top.
+
+![Filtered task list](docs/screenshots/task-list-filtered.png)
+
+### Creating a task
+
+The create/edit form, built with accessible labels and GOV.UK-style inputs.
+
+![Create task form](docs/screenshots/create-form.png)
+
+### Validation
+
+Client-side validation prevents submitting obviously invalid data; server-side errors are mapped back to the right field.
+
+![Create form showing validation errors](docs/screenshots/create-form-errors.png)
+
+### Task detail
+
+Full view of a single task, with edit and delete actions.
+
+![Task detail page](docs/screenshots/task-detail.png)
+
+### API documentation
+
+Auto-generated Swagger UI at `/api-docs` — every endpoint with a try-it-out harness.
+
+![Swagger API documentation](docs/screenshots/swagger-docs.png)
+
 ## What I used
 
 **Backend:** Node.js, Express, and SQLite. For the SQLite bit I used Node's built-in `node:sqlite` module instead of the more common `better-sqlite3`, because the built-in one doesn't need any native compilation — you can clone this and run `npm install` without needing Python, build tools, or anything else on your machine. It's been stable in Node since version 22.5. Validation is done with Joi, API docs with Swagger, and tests with Jest + Supertest.
